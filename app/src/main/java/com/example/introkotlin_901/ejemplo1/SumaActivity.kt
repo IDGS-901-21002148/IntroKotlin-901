@@ -48,7 +48,7 @@ class SumaActivity : AppCompatActivity() {
     }
 
     fun calcular(view: View) {
-        // Validar que los campos no estén vacíos
+
         if (et1.text.toString().trim().isEmpty() || et2.text.toString().trim().isEmpty()) {
             Toast.makeText(this, "Por favor ingrese ambos números", Toast.LENGTH_SHORT).show()
             return
