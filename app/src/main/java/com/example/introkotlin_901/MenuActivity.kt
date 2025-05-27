@@ -1,5 +1,6 @@
 package com.example.introkotlin_901
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -8,10 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.introkotlin_901.Cinepolis.Cinepolis
+import com.example.introkotlin_901.Diccionario.inicio
 import com.example.introkotlin_901.ejemplo1.SumaActivity
 import com.example.introkotlin_901.ejemplo2.Saludo
 
 class MenuActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,6 +28,9 @@ class MenuActivity : AppCompatActivity() {
 
         val btnSaludo = findViewById<Button>(R.id.btn3)
         btnSaludo.setOnClickListener { Saludos() }
+
+        val Diccioanario = findViewById<Button>(R.id.Diccioanario)
+        Diccioanario.setOnClickListener { Diccioanario() }
 
 
 
@@ -48,6 +54,11 @@ class MenuActivity : AppCompatActivity() {
 
     private fun Saludos() {
         val intent = Intent(this, Saludo::class.java)
+        startActivity(intent)
+    }
+
+    private fun Diccioanario() {
+        val intent = Intent(this, inicio::class.java)
         startActivity(intent)
     }
 
